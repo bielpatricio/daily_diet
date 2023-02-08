@@ -1,19 +1,19 @@
 import { TouchableOpacityProps } from 'react-native'
 import { ColorCircle, Container, DataText, Title } from './styles'
+import { ProductItemDTO } from 'src/dtos/ProductItemDTO'
+import moment from 'moment'
 
 type Props = TouchableOpacityProps & {
-  title: string
-  type?: boolean
-  hour: string
+  item: ProductItemDTO
 }
 
-export function MealField({ title, type = false, hour, ...rest }: Props) {
+export function MealField({ item, ...rest }: Props) {
   return (
-    <Container type={type} {...rest}>
-      <DataText>{hour}</DataText>
+    <Container type={item.inDiet} {...rest}>
+      <DataText>{`${moment(item.data).format('HH:mm')}`}</DataText>
       <DataText> | </DataText>
-      <Title>{title}</Title>
-      <ColorCircle type={type}></ColorCircle>
+      <Title>{item.name}</Title>
+      <ColorCircle type={item.inDiet}></ColorCircle>
     </Container>
   )
 }

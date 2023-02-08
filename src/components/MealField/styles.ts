@@ -41,7 +41,7 @@ export const DataText = styled.Text`
 `
 export const ColorCircle = styled.View<Props>`
   background-color: ${({ theme, type }) =>
-    type === true ? theme.COLORS['teal-300'] : theme.COLORS['orange-300']};
+    type === true ? theme.COLORS['teal-300'] : theme.COLORS['red-500']};
   border-radius: 999px;
   width: 15px;
   height: 15px;

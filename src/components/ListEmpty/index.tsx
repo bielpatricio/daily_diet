@@ -1,4 +1,4 @@
-import { Container, Message } from './styles'
+import { Message, Container } from './styles'
 
 type Props = {
   message: string

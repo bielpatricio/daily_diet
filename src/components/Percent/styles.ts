@@ -5,12 +5,14 @@ import styled, { css } from 'styled-components/native'
 export type PercentTypeStyleProps = 'primary' | 'secondary'
 
 type Props = {
-  type: PercentTypeStyleProps
+  typeColor: PercentTypeStyleProps
 }
 
 export const Container = styled(TouchableOpacity)<Props>`
-  background-color: ${({ theme, type }) =>
-    type === 'primary' ? theme.COLORS['teal-300'] : theme.COLORS['orange-300']};
+  background-color: ${({ theme, typeColor }) =>
+    typeColor === 'primary'
+      ? theme.COLORS['teal-300']
+      : theme.COLORS['orange-300']};
   padding: 16px 16px 30px;
   justify-content: center;
   align-items: flex-end;
@@ -39,13 +41,12 @@ export const Subtitle = styled.Text`
   width: 100%;
 `
 export const ArrowUpRightIcon = styled(ArrowUpRight).attrs<Props>(
-  ({ theme, type }) => ({
+  ({ theme, typeColor }) => ({
     size: 24,
-    // color: theme.COLORS['teal-700'],
     weight: 'bold',
     color:
-      type === 'primary'
+      typeColor === 'secondary'
         ? theme.COLORS['teal-700']
-        : theme.COLORS['orange-700'],
+        : theme.COLORS['red-500'],
   }),
 )``

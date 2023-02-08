@@ -4,13 +4,19 @@ import { TouchableOpacityProps } from 'react-native'
 type Props = TouchableOpacityProps & {
   title: string
   icon?: boolean
+  color?: 'red' | 'teal' | 'off' | 'gray'
 }
 
-export function Button({ title, icon, ...rest }: Props) {
+export function Button({
+  title,
+  icon = false,
+  color = 'gray',
+  ...rest
+}: Props) {
   return (
-    <Container {...rest}>
+    <Container colorBg={color} {...rest}>
       {!!icon && <IconPlus />}
-      <Title>{title}</Title>
+      <Title colorBg={color}>{title}</Title>
     </Container>
   )
 }

@@ -12,9 +12,9 @@ type Props = TouchableOpacityProps & {
 }
 
 export function Percent({ percent, ...rest }: Props) {
-  const type: PercentTypeStyleProps = percent >= 40 ? 'primary' : 'secondary'
+  const type: PercentTypeStyleProps = percent >= 65 ? 'primary' : 'secondary'
   return (
-    <Container type={type} {...rest}>
+    <Container typeColor={type} {...rest}>
       <ArrowUpRightIcon />
       <Title>{percent}%</Title>
       <Subtitle>of meals in the diet</Subtitle>
